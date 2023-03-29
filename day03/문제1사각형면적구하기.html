@@ -17,30 +17,28 @@
     시간당급여액 : 20000     <--input 태그
     기본급 : 600000 초과수당: 100000 합: 700000    <--span 태그
     -->
+    
+    <input type="text" id="width" onclick="hoho()" />
+    <input type="text" id="height" onclick="hoho()" />
+    result : <span id="result"></span>
 
-<input type="text" name="x"  id="width"><br>
-<input type="text" name="x"  id="height"><br>
-<button type="text" onclick="rec()" > 더하기 </button>
-result : <sapn id = "result11">  </sapn>
-
-
-
-
-<input type="text" name="nameValue" hour="hourValue" pay="payValue" id="idid"></br>
-result : <sapn id = "result">  </sapn>
 
 </body>
 </html>
 <script>
-    width = document.getElementsByName("x").value;
-    height = document.getElementsByName("y").value;
+    let x = document.getElementById("width").value;
+  let y = document.getElementById("height").value;
 
-    let rec = parseInt(width)*parseInt(height);
-    document.getElementById("result11").innerHTML = rec;
-    console.log(rec);
-    
+  function hoho() {
+    y = document.getElementById("height").value;
+    x = document.getElementById("width").value;
 
-    // let weekPay = parseInt( hourValue) *parseInt( payValue )* 5
+    x = parseInt(x);
+    y = parseInt(y);
+
+    console.log(x * y);
+    document.getElementById("result").innerHTML = x * y;
+  }
 
    
 </script>
