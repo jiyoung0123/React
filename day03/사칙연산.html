@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  x : <input type ="text" name = "xvalue" id="xvalue"><br>
+  y : <input type ="text" name = "yvalue" id="yvalue"><br>
+
+  <button type="text" onclick="add()" > 더하기 </button>&nbsp;&nbsp;
+  <button type="text" onclick="minus()" > 빼기 </button>&nbsp;&nbsp;
+  <button type="text" onclick="cross()" > 곱하기 </button>&nbsp;&nbsp;
+  <button type="text" onclick="division()" > 나누기 </button>
+
+  </br>
+
+
+
+  <button type="text" onclick="add(1)" > 더하기oper </button>&nbsp;&nbsp;
+  <button type="text" onclick="add(2)" > 더하기oper </button>&nbsp;&nbsp;
+  <button type="text" onclick="add(3)" > 더하기oper </button>&nbsp;&nbsp;
+  <button type="text" onclick="add(4)" > 더하기oper </button>&nbsp;&nbsp;
+
+
+
+  result : <sapn id = "result">  </sapn>
+
+   
+</body>
+</html>
+<script>
+    function add(oper)
+    {
+        //1.데이터를 태그로부터 읽어온다.
+        x=document.getElementById("xvalue").value;
+        y=document.getElementById("yvalue").value;
+
+        //2.연산한다
+        if(oper=="1")
+          result = parseInt(x) + parseInt(y);
+        else if(oper=='2') 
+          result = parseInt(x)- parseInt(y);
+        else if(oper=='3')
+          result = parseInt(x)*parseInt(y);
+        else
+          result = parseInt(x)/parseInt(y);     
+        
+        //3.출력한다
+        document.getElementById("result").innerHTML=result;
+    }
+    
+    function minus()
+    {
+        x=document.getElementById("xvalue").value;
+        y=document.getElementById("yvalue").value;
+
+        dab = parseInt(x)-parseInt(y);
+        document.getElementById("result").innerHTML = dab;
+    }
+
+    function cross()
+    {
+        x=document.getElementById("xvalue").value;
+        y=document.getElementById("yvalue").value;
+
+        result = parseInt(x)* parseInt(y);
+        document.getElementById("result").innerHTML=result;
+    }
+
+    function division()
+    {
+        x=document.getElementById("xvalue").value;
+        y=document.getElementById("yvalue").value;
+
+        result = parseInt(x)/parseInt(y);
+        document.getElementById("result").innerHTML=result;
+
+    }
+
+
+
+</script>

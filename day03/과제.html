@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let person = [
+        {name:"홍길동", hour:40, pay:10000},
+        {name:"임꺽정", hour:15, pay:20000},
+        {name:"장길산", hour:20, pay:20000},
+        {name:"강감찬", hour:30, pay:15000},
+        {name:"이순신", hour:40, pay:30000}
+    ];
+
+    let total = person.map( (x)=>{
+        x.sum = x.hour * x.pay;
+        return x;
+    })
+
+    console.log(total);
+    console.log(person);
+
+    //let avg = person.sum;
+
+
+  
+</script>
