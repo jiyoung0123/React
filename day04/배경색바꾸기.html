@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <button style="background-color: aqua;" id="btn1">배경색</button>
+    <button style="background-color: moccasin;" id="btn2" >배경색</button>
+    <button style="background-color: red;" id="btn3" >배경색</button>
+    <button style="background-color: magenta" id="btn4" >배경색</button>
+    <button style="background-color: maroon;" id="btn5" >배경색</button>
+    <button style="background-color: green;" id="btn6">배경색</button>
+    <button style="background-color: lightcoral;" id="btn7">배경색</button>
+</body>
+</html>
+
+<script>
+    $(document).ready( () => {
+        $("#btn1").click( ()=> {
+            $("body").css("background-color", $("#btn1").css("background-color"));
+        })
+
+        
+        //여러개의 버튼이 하나의 함수를 공유할때 매개변수를 붙이면
+        //이벤트가 발생한 객체를 전달한다
+        $("button").click( (btn)=> {
+            console.log(btn);
+            $("body").css("background-color", btn.target.style.backgroundColor);
+            $("body").css("background-color", $("#"+btn.target.id).css("background-color"));
+        })
+
+
+    })
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="background-color: aqua;" id="btn1"onclick="changeBackground(this)">배경색</button>
+    <button style="background-color: moccasin;" id="btn2" onclick="changeBackground(this)">배경색</button>
+    <button style="background-color: red;" id="btn3" onclick="changeBackground(this)">배경색</button>
+    <button style="background-color: magenta" id="btn4" onclick="changeBackground(this)">배경색</button>
+    <button style="background-color: maroon;" id="btn5" onclick="changeBackground(this)">배경색</button>
+    <button style="background-color: green;" id="btn6" onclick="changeBackground(this)">배경색</button>
+    <button style="background-color: lightcoral;" id="btn7" onclick="changeBackground(this)">배경색</button>
+</body>
+</html>
+<script>
+    function changeBackground(me){
+
+        //event - 자바스크립트가 제공하는 내장객체, 발생한 이벤트에 대한 모든 정보를 갖고 있다
+        //evet만 써도 되고 event.target만 써도 되고 event.target.id 까지 써도 되고...
+        console.log( event.target.id);          //해당 event의 target을 콘솔창에 보여줌
+        document.getElementsByTagName("body")[0].style.backgroundColor = me.style.backgroundColor;
+    }
+
+
+    //javascript에서 css를 가져올 때는 style을 쓴다
+    //css에서는 background-color 인데 javascript에서는 변수는 -를 인지하지 못하기 때문에 backgroundColor 이렇게 쓴다
+</script>

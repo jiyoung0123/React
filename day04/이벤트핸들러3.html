@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이벤트 핸들러 -  새로운 방식</h1>
+    <button type="button" id="btnPress">누르세요</button>
+    
+</body>
+</html>
+
+<script>
+
+    //이벤트 핸들러, 이런건 쓰고 바로 버리는 함수라, 메모리 확보에 좋다
+   window.onload=()=>{
+
+    button = document.getElementById("btnPress");
+
+    button.addEventListener("click", ()=>{
+        alert("first function");
+    });
+  
+   button.addEventListener("click", ()=>{
+        alert("Second function");
+    });
+
+    button.addEventListener("click", ()=>{
+        alert("third function");
+    });
+}
+
+
+</script>
