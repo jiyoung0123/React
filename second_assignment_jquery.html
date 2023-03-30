@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <body>
+    이름 : <input type="text" id="name" /><br />
+    국어 : <input type="text" id="kor" /><br />
+    영어 : <input type="text" id="eng" /><br />
+    수학 : <input type="text" id="mat" /><br />
+
+    <button type="button" id="resultButton">결과확인</button><br />
+
+    <div id="result"></div>
+  </body>
+</html>
+
+<script>
+  $(document).ready(() => {
+    $("#resultButton").click(() => {
+      let name = $("#name").val();
+      let kor = $("#kor").val();
+      let eng = $("#eng").val();
+      let mat = $("#mat").val();
+
+      kor = parseInt(kor);
+      eng = parseInt(eng);
+      mat = parseInt(mat);
+      if (
+        kor > 100 ||
+        kor < 0 ||
+        eng > 100 ||
+        eng < 0 ||
+        mat > 100 ||
+        mat < 0
+      ) {
+        alert("점수를 다시 확인 하세요");
+        return;
+      }
+
+      let total = kor + eng + mat;
+      let avg = total / 3;
+
+      temp = `${name}의 총점은 ${total}이고 평균은 ${avg}이다.`;
+      $("#result").html(temp);
+    });
+  });
+</script>
