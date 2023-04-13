@@ -1,0 +1,49 @@
+1. 원하는 폴더로 이동한다
+2. create-react-app 프로젝트명
+3. cd 프로젝트명
+4. npm install react-router-dom
+   npm install bootstrap
+   npm install axios
+
+5. index.js 바꿔야 한다
+
+import {BrowserRouter} from 'react-router-dom';
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+6.App.js 라우터 놓기 - header는 다 지우기
+그리고 넣은 컴포넌트 import 해주기
+          {/* path = 가상url 
+              element = 컴포넌트*/}
+
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          {/* 전체적인 라우터 골격은 Layout컴포넌트에 놓는다 */}
+          <Route index element={<Home/>}/>        
+        </Route>
+      </Routes>      
+    </div>
+export default App;
+
+7.Layout.js 
+//화면 구성을 담당할 함수
+function Layout (props) {
+
+        return (
+            <div>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/About">About</Link></li>
+                    </ul>
+                 </nav>  {/*메뉴 */}
+                    <hr/>
+                    <Outlet/>  {/*각 컴포넌트의 내용이 뿌려질 위치 */}                
+            </div>
+        );
+    }
+export default Layout;
